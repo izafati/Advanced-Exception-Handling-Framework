@@ -1,0 +1,14 @@
+<template>
+	<div class="slds-card slds-var-p-around_large">
+		<div lwc:if={showSpinner}>
+			<lightning-spinner></lightning-spinner>
+		</div>
+
+		<div>
+			<p>Click below to take your payment</p>
+			<lightning-button label="Take payment" onclick={callService}></lightning-button>
+		</div>
+	</div>
+
+	<c-enriched-exception-dialog support-retry onretry={handleRetry}></c-enriched-exception-dialog>
+</template>

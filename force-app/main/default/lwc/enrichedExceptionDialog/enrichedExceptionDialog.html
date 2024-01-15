@@ -1,0 +1,51 @@
+<template>
+	<template if:true={showDialog}>
+		<div role="dialog" class="slds-modal slds-fade-in-open">
+			<div class="slds-modal__container">
+				<header class="slds-modal__header">
+					<h1 class="slds-text-heading_medium">{header}</h1>
+				</header>
+				<div class="slds-modal__content slds-var-p-around_medium">
+					<p class="slds-var-m-bottom_small">{message}</p>
+
+					<lightning-accordion allow-multiple-sections-open active-section-name={activeSections}>
+						<lightning-accordion-section name="detailedErrors" label="Detailed Errors">
+							<ul class="slds-list_dotted slds-text-title">
+								<template for:each={detailedErrors} for:item="detailedError">
+									<li key={detailedError}>{detailedError}</li>
+								</template>
+							</ul>
+						</lightning-accordion-section>
+
+						<lightning-accordion-section name="additionalDetails" label="Additional Details">
+							<template for:each={additionalDetails} for:item="additionalDetail">
+								<p key={additionalDetail.key}><b>{additionalDetail.key}: </b>{additionalDetail.value}</p>
+							</template>
+						</lightning-accordion-section>
+					</lightning-accordion>
+				</div>
+
+				<footer class="slds-modal__footer">
+					<div class="slds-grid slds-float_right">
+						<lightning-button
+							class="slds-var-m-left_x-small"
+							name="Ok"
+							label="Ok"
+							variant="brand"
+							onclick={handleDialogOk}
+						></lightning-button>
+						<lightning-button
+							lwc:if={supportRetry}
+							class="slds-var-m-left_x-small"
+							name="Retry"
+							label="Retry"
+							variant="neutral"
+							onclick={fireRetryEvent}
+						></lightning-button>
+					</div>
+				</footer>
+			</div>
+		</div>
+		<div class="slds-backdrop slds-backdrop_open"></div>
+	</template>
+</template>
