@@ -1,4 +1,5 @@
 <p align="center">
+   <img width="573" alt="image" src="https://github.com/izafati/Advanced-Exception-Handling-Framework/assets/105428157/3937f775-843e-4271-a2d7-f106c7d6626c">
 </p>
 
 
@@ -41,6 +42,10 @@ In our example we are using:
 
 - **SampleLwc**: A sample LWC component to integrate the `enrichedExceptionDialog` and call the `SampleController` methods. This component also demonstrates how to use the retry mechanism included in this framework.  
 
+
+
+
+https://github.com/izafati/Advanced-Exception-Handling-Framework/assets/105428157/b3dc56fc-0925-48b3-a6a6-5c251337282f
 
 
 
